@@ -10,6 +10,7 @@ package com.polarbookshop.orderservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 
 /**
  * Entry point for running the application.
@@ -17,6 +18,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author COQ - Carlos Adolfo Ortiz Q.
  */
 @SpringBootApplication
+@ConfigurationPropertiesScan
 public class Application {
 
     /**

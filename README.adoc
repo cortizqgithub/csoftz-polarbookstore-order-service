@@ -8,3 +8,12 @@ The book reference follows:
 https://www.manning.com/books/cloud-native-spring-in-action[Cloud Native Spring in Action^] book by https://www.thomasvitale.com[Thomas Vitale^].
 
 Provides functionality for managing the order of books in the Polar Book Shop.
+
+== REST API
+
+[%header]
+|===
+|Endpoint|Method|Req. body|Status|Resp. body|Description
+| /api/v1/orders | POST | OrderRequest | 200 | Order   | Submits a new order for a given book in a given quantity
+| /api/v1/orders | GET  |              | 200 | Order[] | Retrieves all the orders.
+|===
