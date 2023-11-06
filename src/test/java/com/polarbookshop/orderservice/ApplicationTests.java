@@ -8,8 +8,15 @@
  -----------------------------------------------------------------------------*/
 package com.polarbookshop.orderservice;
 
+import static com.polarbookshop.orderservice.common.consts.TestContainerConstants.POSTGRESQL_DOCKER_VERSION;
+
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.testcontainers.service.connection.ServiceConnection;
+import org.testcontainers.containers.PostgreSQLContainer;
+import org.testcontainers.junit.jupiter.Container;
+import org.testcontainers.junit.jupiter.Testcontainers;
 
 /**
  * Unit tests for Application class.
@@ -17,7 +24,12 @@ import org.springframework.boot.test.context.SpringBootTest;
  * @author COQ - Carlos Adolfo Ortiz Q.
  */
 @SpringBootTest
+@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
+@Testcontainers
 class ApplicationTests {
+    @Container
+    @ServiceConnection
+    static PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>(POSTGRESQL_DOCKER_VERSION);
 
     /**
      * Load Spring Boot contexts to validate it can run the application.
