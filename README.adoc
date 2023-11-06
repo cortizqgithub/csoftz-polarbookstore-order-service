@@ -1,0 +1,10 @@
+= csoftz-polarbookstore-order-service
+
+Standalone repository for the _'order-service_'.
+Keeps the same code as Thomas Vitale Book Spring Cloud Native but in my own format.
+He uses Gradle in the _git_ repository, but I use Maven instead.
+
+The book reference follows:
+https://www.manning.com/books/cloud-native-spring-in-action[Cloud Native Spring in Action^] book by https://www.thomasvitale.com[Thomas Vitale^].
+
+Provides functionality for managing the order of books in the Polar Book Shop.
