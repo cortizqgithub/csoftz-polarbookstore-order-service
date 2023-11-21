@@ -9,6 +9,7 @@
 package com.polarbookshop.orderservice.service;
 
 import com.polarbookshop.orderservice.domain.order.Order;
+import com.polarbookshop.orderservice.domain.order.message.OrderDispatchedMessage;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -34,4 +35,12 @@ public interface OrderService {
      * @return Saved Order information.
      */
     Mono<Order> submitOrder(String isbn, int quantity);
+
+    /**
+     * Adds the processing to consume the message received from the message queue.
+     *
+     * @param flux Includes a stream of data to be processed.
+     * @return The order being processed.
+     */
+    Flux<Order> consumeOrderDispatchedEvent(Flux<OrderDispatchedMessage> flux);
 }
